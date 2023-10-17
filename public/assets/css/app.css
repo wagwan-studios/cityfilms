@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Gabarito:wght@400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&family=Syne:wght@400;500;600;700;800&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --primary-color: "";
+    --secondary-color: '';
+    --accent-color: '';
+    --primary-font: 'Roboto', Mono;
+    --secondary-font: 'Work Sans', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#web{
+    color: #fff;
+    left: 0;
+    padding: 1rem 0 2rem 3rem;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    width: 100%;
+    z-index: 3;
+
+}
+.nav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img{
+    width: 40px;
+    height: 40px;
+}
+
+.mobile-menu-icon{
+    display: none;
+}
+
+.web-menu ul{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0;
+    height: 4.45rem;
+    padding: 0 3rem;
+    pointer-events: auto;
+    gap: 2rem;
+}
+
+.web-menu a{
+    font: 500 0.87rem Roboto Mono;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.header-overlay{
+    background: #13242f;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+}
+.header-title{
+    /* -webkit-box-align: center;
+    -ms-flex-align: center; */
+    align-items: center;
+    bottom: 3rem;
+    color: #fff;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    display: flex;
+    font: 1.05rem Roboto Mono;
+    left: 3rem;
+    letter-spacing: .1rem;
+    position: absolute;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg) translateY(100%);
+    transform: rotate(-90deg) translateY(100%);
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    z-index: 1;
+}
+.video-wrapper{
+    height: 100%;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.video-wrapper video{
+    height: 100%;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0.4;
+}
+.view-more-cursor-button{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    background: hsla(0,0%,100%,.6);
+    color: #000;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    text-transform: uppercase;
+    font: 700 1.2rem Roboto Mono;
+    text-align: center;
+    padding: 5rem 1rem;
+    transform: translate(-50%,-50%);
+
+}
+.cursor-view-work{
+    mix-blend-mode: difference;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: 6;
+    transform: translate(-50%,-50%);
+}
+.cursor-circle{
+    border: 2px solid hsla(0, 0%, 100%, .2);
+    border-radius: 50%;
+    height: 16rem;
+    width: 16rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* About Section */
+
+.about{
+    width: 100vw;
+    height: 600px;
+    margin: 11.5rem 18rem;
+}
+
+.about-with-video{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-with-video video{
+    position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  height: calc(100% - 400px);
+}
+
+.about-with-video h1{
+    width: 100%;
+    height: calc(100% - 400px);
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    color: #000;
+    background: #fff;
+    mix-blend-mode: screen;
+    overflow: hidden;
+    font: 900 6.2rem var(--secondary-font);
+    text-transform: uppercase;
+    user-select: none;
+    mix-blend-mode: screen;
+    line-height: 5.6rem;
+}
+
+.about-description{
+    position: relative;
+    top: 32%;
+}
+.about-description .about-text{
+    font: 400 1.2rem var(--primary-font);
+    margin: 0;
+    padding: 0;
+    white-space: pre-line;
+    line-height: 1.9rem;
+}
+
+.about-link{
+    text-decoration: none;
+    color: royalblue;
+    text-transform: uppercase;
+    font: 600 1.2rem var(--secondary-font);
+    word-spacing: 10px;
+    margin-top: 2rem;
+}
