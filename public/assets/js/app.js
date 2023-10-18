@@ -25,16 +25,16 @@ var mouseX = '50%',
 
     TweenMax.set(cursor, {
         css: {
-        left: mouseX,
-        top: mouseY,
+        left: posX,
+        top: posY,
         }
     });
   }
 });
 
 $("#header").on("mousemove", function(e){
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    mouseX = parseInt(e.screenX);
+    mouseY = parseInt(e.screenY);
     $(follower).css({
         'visibility': 'visible',
         'opacity': 1
@@ -53,3 +53,50 @@ $("#header").on("mouseleave", function(e){
     })
 });
 
+const video = document.querySelectorAll('.hover-video');
+video.forEach(element => {
+    element.addEventListener('mouseover', (e) =>{
+        element.play();
+    });
+    element.addEventListener('mouseleave', () => {
+        element.pause();
+    })
+});
+
+var lastScroll = 0;
+
+function onScrollNavStick () {
+    let menu = document.getElementById('web');
+    var doc = window.pageYOffset || document.documentElement.scrollTop;
+    if(doc === 0){
+        menu.classList.remove('web-fixed');
+    }
+        else if(doc > lastScroll){
+            if(menu.classList.contains('web-fixed')){
+                menu.classList.remove('web-fixed');
+            }
+        }
+        else if(doc < lastScroll){
+            if(!menu.classList.contains('web-fixed')){
+                menu.classList.add('web-fixed');
+            }
+        }
+        lastScroll = doc <= 0 ? 0 : doc;
+}
+window.addEventListener('scroll', onScrollNavStick, false);
+
+$(".all-work-link").mousemove(function(event){
+    var xPos = (event.clientX/$(window).width())-0.5,
+    yPos = (event.clientY/$(window).height())-0.5,
+    box = $('.all-work-link');
+
+    TweenLite.to(box, 1, {
+        left: xPos * 100,
+        top: yPos * 100,
+        ease: Power1.easeOut,
+    });
+});
+$(".all-work-link").mouseleave(function(e){
+    console.log('here');
+    $(".all-work-link").removeAttr("style");
+});
