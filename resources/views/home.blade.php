@@ -129,3 +129,6 @@ projects, we are able to do what we love most: create content you can feel.
 </main>
 @include('Particles.foot')
 @endsection
+@push('js')
+    <script src="{{ asset('assets/js/cursor.js') }}"></script>
+@endpush

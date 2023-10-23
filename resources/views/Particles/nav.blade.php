@@ -8,8 +8,8 @@
         <div class="web-menu">
             <ul>
                 <li><a href="{{ url('/about') }}">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ url('/work') }}">Work</a></li>
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
             </ul>
         </div>
         <div class="mobile-menu-icon"><i class="ri-menu-3-fill"></i></div>
@@ -26,13 +26,13 @@
         <div class="mobile-menu">
             <ul>
                 <li><a href="{{ url('/about') }}">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ url('/work') }}">Work</a></li>
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
             </ul>
         </div>
         <div class="contact-menu">
             <div class="footer-columns">
-                <span class="bold-text largespan order-1"> <a href="mailto:Sayhello@cityfilms.com">Sayhello@cityfilms.com</a> </span>
+                <span class="bold-text largespan order-1"> <a href="mailto:Sayhello@cityfilms.com">Sayhello@cityfilms.com.pk</a> </span>
                 <span class="bold-text normalspan text-center order-2"> <a href="tel:03336121121">03336121121</a> </span>
                 <span class="bold-text largespan order-3"> <a href="#">House # Dummy , Karachi Pakistan</a> </span>
                 <span class="smallspan text-center order-4"> <a href="#"><i class="ri-instagram-line"></i></a> </span>

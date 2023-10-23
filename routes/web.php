@@ -19,3 +19,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/work', function () {
+    return view('work');
+});
+Route::get('/work/{slug}', function (){
+    return view('work-detail');
+})->where('slug', '.*');

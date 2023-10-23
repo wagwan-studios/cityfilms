@@ -14,12 +14,17 @@
     font-family: var(--primary-font);
     text-decoration: none;
 }
-
+.logo{
+    pointer-events: all;
+}
 body{
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+  scroll-padding-top: 15vh;
+  scroll-snap-align: start;
 }
-header{
+#header{
     width: 100%;
     height: 100vh;
     position: relative;
@@ -158,6 +163,22 @@ header{
     visibility: hidden;
     z-index: 6;
     transform: translate(-50%,-50%);
+}
+.link-dynamic-cursor{
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background: rgba( 0, 0, 0, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0.5px );
+    --webkit-backdrop-filter: blur( 3.5px );
+    z-index: 99;
 }
 .cursor-circle{
     border: 2px solid hsla(0, 0%, 100%, .2);
@@ -571,12 +592,203 @@ figcaption{
     line-height: 1.4;
     margin-top: 3rem;
 }
-/* .approach-image{
-    height: 59.8rem;
-    overflow: hidden;
+
+/* Capabilities Section */
+
+.capabilities{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    margin: 16rem auto;
+    max-width: 136.6rem;
+    justify-content: space-between;
+}
+.capabilities-text{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    flex-basis: 50%;
+    margin: 5rem 10rem 5rem 0rem;
+}
+.capabilities-text h2{
+    font: 900 4rem var(--secondary-font);
+    text-transform: uppercase;
+    line-height: 1;
+}
+.capabilities-image img{
+    width: 100%;
+    padding: 0 10rem;
+    height: calc(100% - 68.3rem);
+    object-fit: cover;
+}
+.capabilities-text .title{
+    font-family: Roboto Mono;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 5;
+}
+.capabilities-text .description{
+    font: 500 0.8rem Roboto Mono;
+    letter-spacing: .05rem;
+    opacity: .7;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid  #000;
+    border-top: 1px solid  #000;
+}
+.dots{
+    font-size: 1rem;
+    letter-spacing: 1rem;
+}
+.title-text-wrapper{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.about-cover-last{
+    width: 100%;
+    height: 90vh;
+}
+.about-cover-last img{
+    width: 100%;
+    height: 100%;
+}
+
+/* contact header */
+
+#contact-header{
+    width: 100%;
+    height: 60vh;
+}
+.contact-header-overlay{
+    background: #13242f;
+    height: 100%;
     position: relative;
-    width: 68.3rem;
-} */
+    width: 100vw;
+}
+
+.contact{
+    width: 100vw;
+    height: 570px;
+    margin: 11.5rem 18rem 0 18rem;
+}
+
+.contact-without-video{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-without-video h1{
+    width: 100%;
+    height: calc(100% - 400px);
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    color: #000;
+    background: #fff;
+    mix-blend-mode: screen;
+    overflow: hidden;
+    font: 900 4.2rem var(--secondary-font);
+    text-transform: uppercase;
+    user-select: none;
+    mix-blend-mode: screen;
+    line-height: 3.6rem;
+}
+
+.contact-description{
+    position: relative;
+    top: 32%;
+}
+.contact-description .contact-text{
+    font: 400 1.2rem var(--primary-font);
+    margin: 0;
+    padding: 0;
+    white-space: pre-line;
+    line-height: 1.9rem;
+}
+
+.contact-link{
+    margin-top: 2rem;
+}
+.contact-link h6{
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font: 500 1.4rem var(--primary-font);
+    line-height: 2;
+}
+.contact-link a{
+    text-decoration: none;
+    color: #000;
+    font: 400 1rem var(--secondary-font);
+    line-height: 1;
+}
+
+.contact-cover-last {
+    width: 100vw;
+    height: 70vh;
+}
+.contact-cover-last img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Work Page */
+.work-header{
+    margin-top: 30vh;
+}
+.work-head-wrapper{
+    padding: 0 20rem;
+}
+.work-main-heading{
+    font: 900 5.4rem Work Sans;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.tabs-head{
+    margin-top: 2.2rem;
+}
+.tabs-head button {
+    background: none;
+    border: none;
+    outline: none;
+    font: 500 14px Roboto Mono;
+    text-transform: uppercase;
+    margin-left: 22px;
+}
+.tabs-head button.active{
+    color: #4082ff;
+}
+
+.work{
+    margin: 7.8rem 9.8rem 15rem 9.8rem;
+}
+.work-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+article{
+    flex-basis: 50%;
+    padding: 2rem;
+}
+
+.work-head-company-link{
+    font: 500 14px Roboto Mono;
+    text-transform: uppercase;
+    color: #4082ff;
+}
 
 @media only screen and (max-width: 1400px) and (min-width: 660px) {
     .about{
@@ -595,14 +807,13 @@ figcaption{
 
     /* mobile menu */
     #mobile{
-        z-index: 0;
         position: fixed;
+        visibility: hidden;
         display: block;
-        opacity: 0;
         height: 100vh;
         width: 100vw;
         background: #000;
-        transition: all ease 0.4s;
+        transition: width ease 0.4s;
     }
     .mobile-wrapper{
         color: #fff;
@@ -1036,5 +1247,124 @@ figcaption{
 }
 .approach-image img{
     width: 100%;
+}
+
+/* Capabilities Section */
+
+.capabilities{
+    height: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+.capabilities-text{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    flex-basis: 100%;
+}
+.capabilities-text h2{
+    font: 900 2rem var(--secondary-font);
+    text-transform: uppercase;
+    line-height: 1;
+}
+.capabilities-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+}
+.capabilities-text .title{
+    font-family: Roboto Mono;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 2;
+}
+.capabilities-text .description{
+    font: 500 0.8rem Roboto Mono;
+    letter-spacing: .05rem;
+    opacity: .7;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid  #000;
+    border-top: 1px solid  #000;
+}
+.dots{
+    font-size: 1rem;
+    letter-spacing: 1rem;
+}
+.title-text-wrapper{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.about-cover-last{
+    width: 100%;
+    height: 100vh;
+}
+.about-cover-last img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Contact Section */
+
+.contact{
+    width: 100vw;
+    height: 570px;
+    margin: 1rem 0;
+    padding: 0 2rem;
+}
+
+.contact-without-video{
+    width: 90%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-without-video h1{
+    width: 100%;
+    height: calc(100% - 200px);
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    color: #000;
+    overflow: hidden;
+    font: 900 2.2rem var(--secondary-font);
+    text-transform: uppercase;
+    line-height: 2.2rem;
+}
+
+.contact-description{
+    position: relative;
+    top: 18%;
+}
+.contact-description .contact-text{
+    font: 400 0.9rem var(--primary-font);
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+    line-height: 2.2rem;
+}
+.work-head-wrapper{
+    padding: 0 1rem;
+}
+.work-main-heading{
+    font: 900 3.4rem Work Sans;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.work{
+    margin: 1rem;
+}
+article{
+    flex-basis: 100%;
+    padding: 2rem 0;
 }
 }

@@ -2,7 +2,7 @@
     <div class="content-wrapper">
         <h2>Let's Connect</h2>
         <div class="footer-columns">
-            <span class="bold-text border-top border-bottom border-right largespan order-1"> <a href="mailto:Sayhello@cityfilms.com">Sayhello@cityfilms.com</a> </span>
+            <span class="bold-text border-top border-bottom border-right largespan order-1"> <a href="mailto:Sayhello@cityfilms.com">Sayhello@cityfilms.com.pk</a> </span>
             <span class="bold-text border-top border-bottom normalspan text-center order-2"> <a href="tel:03336121121">03336121121</a> </span>
             <span class="bold-text border-bottom border-right largespan order-3"> <a href="#">House # Dummy , Karachi Pakistan</a> </span>
             <span class="border-bottom border-right smallspan text-center order-4"> <a href="#"><i class="ri-instagram-line"></i></a> </span>
@@ -26,3 +26,4 @@
         </div>
     </div>
 </footer>
+<div class="link-dynamic-cursor"></div>

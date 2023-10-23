@@ -9,5 +9,5 @@
     <title>City Films | @stack('title')</title>
     @stack('css')
 </head>
-<body>
+<body class="lazy">
 
