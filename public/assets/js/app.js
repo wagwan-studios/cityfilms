@@ -76,11 +76,11 @@ function onScrollNavStick () {
 window.addEventListener('scroll', onScrollNavStick, false);
 
 $(".all-work-link").mousemove(function(event){
-    var xPos = (event.clientX/$(window).width())-0.5,
-    yPos = (event.clientY/$(window).height())-0.5,
+    var xPos = (event.clientX/$(window).width())-0.8,
+    yPos = (event.clientY/$(window).height())-0.8,
     box = $('.all-work-link');
 
-    TweenLite.to(box, 1, {
+    TweenLite.to(box, 2, {
         left: xPos * 100,
         top: yPos * 100,
         ease: Power1.easeOut,

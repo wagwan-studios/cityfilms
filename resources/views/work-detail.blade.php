@@ -9,14 +9,13 @@
 
     <header class="work-header">
         <div class="work-head-wrapper">
-            <a href="#" class="work-head-company-link">Coronado Brewing Company</a>
-            <h1 class="work-main-heading">Stay Coastal</h1>
+            <a href="#" class="work-head-company-link">{{ $work->related_to }}</a>
+            <h1 class="work-main-heading">{{ $work->title }}</h1>
         </div>
     </header>
     <section class="work-video-playing">
         <video loop autoplay muted playsinline id="single-play">
-            <source src="https://player.vimeo.com/progressive_redirect/playback/833856232/rendition/1080p/file.mp4?loc=external&signature=efc4eb2cb476bde9c8f7dba90102e57a5f61faffdf60a1465530baafb3783ccd"
-            type="video/mp4">
+            <source src="{{ asset($work->video_url) }}">
         </video>
         <a href="#" onclick="openFullScreenVideo()" class="view-more-cursor-button">Play</a>
         <a href="#" onclick="closeFullScreenVideo()" class="close-cursor-button"><i class="ri-close-line"></i></a>
@@ -64,6 +63,11 @@
                 padding: 5rem 1rem;
                 transform: translate(-50%,-50%);
 
+            }
+            #single-play{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         </style>
     @endpush

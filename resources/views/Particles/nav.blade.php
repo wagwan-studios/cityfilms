@@ -2,7 +2,7 @@
     <div class="nav-wrapper">
         <div class="logo">
             <a href="/">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="CityFilms Logo">
+                <img src="{{ asset('assets/images/CITYFILMS.png') }}" alt="CityFilms Logo">
             </a>
         </div>
         <div class="web-menu">
@@ -19,7 +19,7 @@
     <div class="mobile-wrapper">
         <div class="logo-section">
             <a href="/">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="CityFilms Logo">
+                <img src="{{ asset('assets/images/CITYFILMS.png') }}" alt="CityFilms Logo">
             </a>
             <div class="mobile-menu-close-icon"><i class="ri-close-fill"></i></div>
         </div>

@@ -63,8 +63,8 @@ body{
 }
 
 .logo img{
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 60px;
 }
 
 .mobile-menu-icon{
@@ -281,7 +281,7 @@ body{
     top: 60%;
 }
 .detail-image-right video{
-    right: -40vw;
+    right: -20vw;
     position: relative;
     background: transparent url("../images/content-1.webp") 50% 50% / cover no-repeat ;
     width: 70%;
@@ -311,7 +311,7 @@ body{
     top: 60%;
 }
 .detail-image-left video{
-    left: -10vw;
+    left: -2vw;
     position: relative;
     background: transparent url("../images/content-1.webp") 50% 50% / cover no-repeat ;
     width: 70%;
@@ -332,18 +332,18 @@ body{
 }
 .all-work-link{
     text-decoration: none;
-    border: 2px solid #4082ff;
+    border: 2px solid #ad1f24;
     border-radius: 50%;
     height: 15rem;
     width: 15rem;
-    color: #4082ff;
+    color: #ad1f24;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 .all-work-link:hover{
-    background: #4082ff;
+    background: #ad1f24;
     color: #fff;
 }
 .all-work-link span{
@@ -758,15 +758,16 @@ figcaption{
 .tabs-head{
     margin-top: 2.2rem;
 }
-.tabs-head button {
+.tabs-head a {
     background: none;
     border: none;
     outline: none;
     font: 500 14px Roboto Mono;
     text-transform: uppercase;
     margin-left: 22px;
+    color: #000;
 }
-.tabs-head button.active{
+.tabs-head a.active{
     color: #4082ff;
 }
 

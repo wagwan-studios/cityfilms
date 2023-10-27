@@ -2,16 +2,16 @@
 @push('title')
     Home
 @endpush
-
+{{-- @dd($left_col, $right_col) --}}
 @section('content')
 @include('Particles.nav')
 <header id="header">
     <div id="overlay-header" class="header-overlay">
         <h1 class="header-title"><i class="ri-arrow-left-line"></i>&nbsp;&nbsp; San Diego Video Production</h1>
-        <a href="#" class="video-wrapper">
+        <a href="{{ url('/work') }}" class="video-wrapper">
             <video autoplay="" class="home__header__video loaded" loop="" muted="" playsinline="" data-src="https://player.vimeo.com/progressive_redirect/playback/846730952/rendition/1080p/file.mp4?loc=external&amp;signature=c1daa1762ac54411f33e0202a274c08c1e5b12d88d84f317f303ac4c481a1ba3" src="https://player.vimeo.com/progressive_redirect/playback/846730952/rendition/1080p/file.mp4?loc=external&amp;signature=c1daa1762ac54411f33e0202a274c08c1e5b12d88d84f317f303ac4c481a1ba3">
             </video>
-            <a href="#" class="view-more-cursor-button"> View Work </a>
+            <a href="{{ url('/work') }}" class="view-more-cursor-button"> View Work </a>
         </a>
     </div>
     <div class="cursor-view-work">
@@ -33,12 +33,39 @@ collaboration at the center of our process, and emphasizing emotion in all of ou
 projects, we are able to do what we love most: create content you can feel.
                     </pre>
                     <div class="about-link">
-                        <a href="#" class="about-link">About Us</a>
+                        <a href="{{ url('/about') }}" class="about-link">About Us</a>
                     </div>
                 </div>
             </div>
     </section>
-    <section class="details">
+    @foreach ($portfolio as $index => $work)
+        @if($index >= 0 && $index % 2 !== 0)
+        <section class="details">
+            <div class="details-wrapper">
+                <div class="detail-image-right">
+                    <video class="right-image-1 hover-video" src="{{ asset($work->video_url) }}"
+                    loop muted paused playsinline ></video>
+                    <div class="video-caption"><h4>{{ $work->title }}</h4></div>
+                </div>
+                <marquee behavior="smooth" direction="left">{{ $work->title }}</marquee>
+                <marquee behavior="smooth" direction="right">{{ $work->title }}</marquee>
+            </div>
+        </section>
+        @else
+        <section class="details">
+            <div class="details-wrapper-left">
+                <div class="detail-image-left">
+                    <video class="left-image-1 hover-video" src="{{ asset($work->video_url) }}"
+                    loop muted paused playsinline ></video>
+                    <div class="video-caption"><h4>{{ $work->title }}</h4></div>
+                </div>
+                <marquee behavior="smooth" direction="right">{{ $work->title }}</marquee>
+                <marquee behavior="smooth" direction="left">{{ $work->title }}</marquee>
+            </div>
+        </section>
+        @endif
+    @endforeach
+    {{-- <section class="details">
         <div class="details-wrapper">
             <div class="detail-image-right">
                 <video class="right-image-1 hover-video" src="https://player.vimeo.com/external/651691026.hd.mp4?s=26abb0304370cf98b37ed4e8d2074aa933061208&profile_id=175"
@@ -103,9 +130,9 @@ projects, we are able to do what we love most: create content you can feel.
             <marquee behavior="smooth" direction="right">AMBASSADOR: FRANCIS DONALD</marquee>
             <marquee behavior="smooth" direction="left">AMBASSADOR: FRANCIS DONALD</marquee>
         </div>
-    </section>
+    </section> --}}
     <section class="all-work">
-        <a href="#" class="all-work-link">
+        <a href="{{ url('/work') }}" class="all-work-link">
             <span class="all-work-link-wrapper">View All Work</span>
         </a>
     </section>
