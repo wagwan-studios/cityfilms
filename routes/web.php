@@ -24,7 +24,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/work', [FrontendPagesController::class, 'workPage']);
+Route::get('/work', [FrontendPagesController::class, 'workPage'])->name('getWork');
 Route::get('/work/{slug}', [FrontendPagesController::class, 'workDetail'])->where('slug', '.*');
 
 Route::prefix('admin')->name('admin.')->group(function(){

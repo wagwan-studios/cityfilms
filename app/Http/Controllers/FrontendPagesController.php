@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 class FrontendPagesController extends Controller
 {
     public function workPage(){
+        if(request()->ajax()){
+            if(request()->has('category')){
+                $category = request()->get('category');
+                $portfolio_work = Portfolio::whereHas('category', function($q) use($category){
+                    $q->where('name', $category);
+                })->get();
+                return ['data' => $portfolio_work];
+            }
+        }
         $categories = PortfolioCategory::active()->get();
         $portfolio_work = Portfolio::with('category')->paginate(8);
         return view('work', compact('categories', 'portfolio_work'));
